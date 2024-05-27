@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/7156c50ef7.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <title>일룸 포트톨리오</title>
+    <style>
+
+        body,html{
+           font-family: 'Nanum Brush Script', cursive;
+           font-family: 'Nanum Pen Script', cursive;
+           font-family: 'Noto Sans KR', sans-serif;
+        }
+
+
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        
+        .header{
+            width: 100%;
+            height: 50px;
+            background: white;
+            display: flex;
+            position: relative;
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            margin: 0 auto;
+        }
+
+        .icon_menubar{
+            position: absolute;
+            top: 12px;
+            cursor: pointer;
+        }
+
+        .header_left-menu{
+            display: flex;
+            position: absolute;
+            left: 20px;
+            top: 10px;
+        }
+
+        .header_left-menu > li{
+            margin-left: 8px;
+        }
+
+        .header_left-menu > li > a{
+            color: black;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.8em;
+        }
+
+        .bar{
+            padding: 0 0 10px 0;
+            margin-top: -5px;         
+        }
+
+        .logo{
+            position: absolute;
+            width: 90px;
+            left: 46%;
+            top: 10px
+        }
+
+        .header_right-menu{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            position: absolute;
+            display: flex;
+            right: 4%;
+            top: 10px;
+        }
+
+        .header_right-menu > li{
+            margin-left: 10px;
+        }
+
+        .header_right-menu > li > a{
+            color: black;
+            text-decoration: none;
+            font-size: 0.8em;
+        }
+
+        .icon_search{
+            position: absolute;
+            right: 30px;
+            top: 10px;
+            cursor: pointer;
+        }
+
+        .icon_shoppingbasket{
+            position: absolute;
+            right: 0;
+            top: 10px;
+
+        }
+
+        .bx-wrapper{
+            width: 1650px;
+            margin: 0 auto;       
+        }
+
+        .swiper-wrapper{
+            display: flex;
+            overflow: hidden;
+        }
+
+        .swiper-wrapper > img{
+            width: 100%;
+        }
+
+        .bx-wrapper .bx-pager.bx-default-pager a{
+            background: gainsboro;
+        }
+
+        .bx-prev{
+            z-index: -1;
+        }
+
+        .bx-wrapper .bx-pager.bx-default-pager a:hover, 
+        .bx-wrapper .bx-pager.bx-default-pager a.active,
+        .bx-wrapper .bx-pager.bx-default-pager a:focus{
+            background: #C80A1E;
+         }
+
+       h4{
+           margin-left: 45%;
+           margin-top: 80px;
+       }
+
+       .recommended_product{
+           width: 1450px;
+           height: 390px;
+           border-bottom: 1px solid gainsboro;
+           display: flex;
+           justify-content: space-between;
+           margin-left: 6%;
+           margin: 0 auto;
+         
+       }
+
+       .product{
+           width: 270px;
+           height: 384px;
+       }
+
+       .product > img{
+           width: 100%;
+           cursor: pointer;
+       }
+
+       .product > p{
+           font-size: 0.8em;
+           margin-bottom: 15px;
+       }
+
+       #iloom_img_banners{
+           width: 1450px;
+           display: flex;
+           justify-content: space-between;
+           top: 60px;
+           left: 0px;
+           position: relative;
+           cursor: pointer;
+           margin: 0 auto;
+       }
+
+       #iloom_img_banners > img{
+         width: 718px;
+       }
+
+
+       #iloom_img_banners002{
+           width: 1450px;
+           display: flex;
+           justify-content: space-between;
+           left: 0px;
+           top: 80px;
+           margin: 0 auto;
+           position: relative;
+
+       }
+
+       .banner_img{
+           width: 480px;
+           height: 360px;
+       }
+
+       .banner_img > img{
+           width: 100%;
+           cursor: pointer;
+           object-fit: cover;
+       }
+
+
+       .iloom_article_bnr{
+           width: 100%;
+           height: 80px;
+           background: #F0F0F0;
+           margin-top: 120px;
+           position: relative;
+       }
+
+
+       .iloom_article_bnr > img{
+           width: 150px;
+           height: auto;
+           position: absolute;
+           left: 30%;
+           top: 25px;
+           object-fit: cover;
+       }
+
+       .article_txt{
+           position: absolute;
+           left: 43%;
+           top: 36%;
+       }
+
+       .seemore{
+           width: 80px;
+           position: absolute;
+           right: 20%;
+           top: 29px;
+       }
+
+       .iloom_reviews{
+         width: 1260px;
+         display: flex;
+         justify-content: space-between;
+         margin: 0 auto;
+         margin-top: 70px;
+       }
+
+       .review{
+           width: 300px;
+           height: 300px;
+       }
+
+       .review > img{
+           width: 100%;
+           height: 100%;
+           border-radius: 10px;
+           cursor: pointer;
+           object-fit: cover;
+       }
+
+       .pentagram{
+           width: 250px;
+           height: 100px;
+           border-bottom: 1px dashed gainsboro;
+       }
+
+       .iloom_review-star > img{
+           width: 15px;
+           height: 15px;
+           margin-left: 3px;
+           margin-top: 10px;
+       }
+
+       .review_title{
+           font-size: 1em;
+           margin-top: 10px;
+       }
+
+       .review_content{
+           font-size: 0.9em;
+           margin-top: 5px;
+       }
+
+       .review_product{
+           width: 240px;
+           margin-top: 40px;
+       }
+
+       .review_product > img{
+           width: 70px;
+           height: 70px;
+           border-radius: 50%;
+       }
+
+       .review-dl{
+           float: right;
+           margin-top: -3px;
+           margin-right: 80px;
+       }
+
+       dt{
+           font-weight: 600;
+           margin-bottom: 5px;
+           font-size: 0.9em;
+       }
+
+       dd{
+           font-size: 0.8em;
+           margin-left: -1px;
+           margin-bottom: 5px;
+       }
+
+       .product-likenumber{
+        float: right;
+        margin-right: -120px;
+        font-size: 0.8em;
+        margin-top: -4px;
+       }
+
+       .product-likeheart > img{
+        float: right;
+        margin-right: -140px;
+        width: 15px;
+
+       }
+
+      .insta-section{
+        height: 480px;
+        margin-top: 300px;
+        background: #F0F0F0;
+    
+
+      }
+
+      .insta_inr{
+        width: 1700px;
+        height: 480px;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      .iloom_instaphoto{
+        position: absolute;
+        width: 252px;
+        height: 252px;
+        margin-left: 48px;
+      }
+
+      .iloom_instaphoto > img{
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+      }
+
+      .iloom_instaphoto_section{
+        width: 1200px;
+        height: 200px;
+        display: flex;
+        justify-content: space-between;
+        left: 78px;
+        top: 38%;
+        position: absolute;
+      }
+
+      .insta_title {
+          width: 180px;
+          height: 28px;
+          top: 15%;
+          left: 42%;
+          position: absolute;
+      }
+      
+      .insta_title > img{
+          width: 180px;
+          height: 28px;
+          position: relative;
+          left: 20%;
+      }
+
+      .insta_subtitle{
+          width: 120px;
+          position: absolute;
+          top: 26%;
+          left: 46%;
+      }
+
+      .insta_subtitle > img{
+          width: 120px;
+      }
+
+      .insta_txt{
+        display: flex;
+        margin-top: 10px;
+        width: 222px;
+        background: rgba(0,0,0,0.3);
+        position: absolute;
+        bottom: -20px;
+        display: none;
+      }
+
+      .insta_txt > i {
+        position: absolute;
+        right: 7px;
+        top: 22px;
+        color: white;
+      }
+
+      .insta_txt > p{
+        color: white;
+        margin-left: 70px;
+      }
+
+      .quickmn_section{
+          width: 1300px;
+          height: 450px;
+          position: relative;
+          margin: 0 auto;
+      }
+
+      .quickmn_title > img{
+          width: 200px;
+          height: 28px;
+          position: absolute;
+          top: 15%;
+          left: 42%;
+      }
+
+      .map-icon{
+          position: absolute;
+          position: relative;
+          width: 150px;
+          height: 150px;
+          background: #F0F0F0;
+          border-radius: 50%;
+          top: 35%;
+          left: 33%;
+          transition: 0.3s;
+          cursor: pointer;
+      }
+
+      .map-icon > i{
+          position: absolute;
+          top: 50px;
+          left: 50px;
+      }
+
+      .tag-icon{
+          position: absolute;
+          position: relative;
+          width: 150px;
+          height: 150px;
+          background: #F0F0F0;
+          border-radius: 50%;
+          top: 3%;
+          left: 51%;
+          transition: 0.3s;
+          cursor: pointer;
+      }
+
+      .tag-icon > i{
+          position: absolute;
+          top: 50px;
+          left: 56px;
+      }
+
+      .map-p{
+          width: 100px;
+          height: 80px;
+          position: absolute;
+          top: 70%;
+          left: 36%;
+          transition: 0.3s;
+          cursor: pointer;
+
+      }
+
+      .f17_noto{
+          margin-left: 8px;
+      }
+
+      .f15_arial{
+          margin-left: 17px;
+      }
+
+      .tag-p{
+          width: 100px;
+          height: 80px;
+          position: absolute;
+          top: 70%;
+          left: 54%;
+          transition: 0.3s;
+          cursor: pointer;
+
+      }
+
+      .map-icon:hover{
+        background: grey;
+        color: white;
+      }
+
+      .map-icon:hover ~ .map-p{
+        color: #C80A1E;
+      }
+
+      .tag-icon:hover{
+        background: grey;
+        color: white;
+      }
+
+      .tag-icon:hover ~ .tag-p{
+        color: #C80A1E;
+      }
+
+      .notice_section{
+          width: 1300px;
+          margin-top: -40px;
+          margin-left: -10px;
+          margin: 0 auto;
+      } 
+
+      .notice_title > img{
+          width: 142px;
+          height: 29px;
+      }
+
+      .notice_title{
+          width: 120px;
+          height: 25px;
+          margin-left: 44%;
+          margin-top: 70px;
+      }
+
+      .notice_list{
+          margin-top: 70px;
+          margin-left: 24%;
+          width: 600px;
+      }
+
+      .notice_list > li{
+          margin-top: 15px;
+          font-weight: 600;
+          cursor: pointer;
+      }
+
+      .ntcDt{
+          margin-left: 50%;
+          color: #aaaaaa;
+      }
+
+      .ntcDt01{
+          margin-left: 309px;
+          color: #aaaaaa;
+      }
+
+      .ntcDt04{
+          margin-left: 248px;
+          color: #aaaaaa;
+      }
+    
+      footer{
+          height: 257px;
+          background: #F0F0F0;
+          margin-top: 120px;
+      }
+
+      .footerinr{
+          width: 1200px;
+          height: 437px;
+          margin: 0 auto;
+          padding: 55px 20px 20px;
+          position: relative;
+          box-sizing: border-box;
+      }
+
+      .footerinr_box{
+          width: 100%;
+          height: 220px;
+          display: flex;
+      }
+
+      .footerlogo{
+          width: 100px;
+      }
+
+      .footer_item_title{
+          margin-left: 1%;
+      }
+
+      .footer_item_title > li{
+          float: left;
+          margin-left: 120px;
+          font-weight: 600;
+          font-size: 0.9em;
+      }
+
+      .footer_item_sub{
+          margin-left: 2px;
+      }
+
+      .footer_item_sub > li{
+          margin-top: 10px;
+          font-size: 0.8em;
+          font-weight: 400;
+          cursor: pointer;
+      }
+
+     .footer_item_dl{
+         display: flex;
+         margin-left: 120px;
+         margin-top: -3px;
+     }
+
+
+     .footer_item_dl > dd{
+         margin-left: 10px;
+     }
+
+
+     .footer_dl_inr{
+         display: block;
+         margin-left: 10px;
+     }
+
+     .footer_txt{
+         text-decoration: none;
+         color: black;
+         font-weight: 600;
+     }
+
+
+     .footer_kakao_btn{
+         width: 100px;
+         height: 30px;
+         background: #ffffffcc;
+         border: none;
+         margin-left: 40px;
+     }
+
+     .footer_service_btn{
+         width: 180px;
+         height: 30px;
+         background: #ffffffcc;
+         border: none;
+         margin-left: 5px;
+     }
+
+     #all_menu_layer_popup{
+         width: 1100px;
+         height: 900px;
+         background: white;
+         z-index: 999999;
+         position: relative;
+         position: absolute;
+         display: none;
+         position: fixed;
+         top: 2%;
+         left: 10px;
+     }
+
+     .layer_title{
+         width: 100px;
+         height: 30px;
+         float: left;
+         text-align: center;
+         margin-left: 15px;
+         margin-top: 10px;
+     }
+
+     .layer_title > a{
+         font-size: 18px;
+         font-weight: 600;
+     }
+
+     .almp_line{
+         width: 895px;
+         height: 1px;
+         border-bottom: 1px solid #aaaaaa;
+         margin-top: 50px;
+         margin-left: 15px;
+     }
+
+     .almp_menu{
+         width: 100px;
+         height: 820px;
+         border-right: 1px solid #F0F0F0;
+         margin-top: 40px;
+     }
+
+     .layer_sub_title > a{
+         font-size: 0.9em;
+         font-weight: 600;
+     }
+
+
+     .almp_menu_ul > li{
+         margin-top: 7px;
+     }
+
+     .almp_menu_ul > li > a{
+         font-size: 0.8em;
+     }
+
+     hr{
+         width: 16px;
+         color: #aaaaaa;
+         margin-top: 20px;
+         margin-bottom: 20px;
+     }
+
+     .layer_line{
+         height: 775px;
+         border-right: 1px solid #aaaaaa;
+     }
+
+     .almp_right_menu{
+         width: 179px;
+         height: 900px;
+         position: absolute;
+         background: #f0f0f0;
+         float: left;
+         right: 0;
+         top: 0;
+     }
+
+     .layer_close{
+         position: absolute;
+         right: 10px;
+         font-size: 1.8em;
+         z-index: 999;
+         cursor: pointer;
+     }
+
+     .almp_right_box{
+         width: 100px;
+         margin-left: 38px;
+         margin-top: 58%;
+     }
+
+     .layer_right_txt{
+         width: 100px;
+         height: 50px;
+         margin-top: 30%;
+     }
+
+     .layer_right_txt > a{
+         color: black;
+         text-decoration: none;
+         font-weight: 800;
+         font-size: 1.2em;
+         transition: 0.3s;
+     }
+
+     .layer_right_txt > a:hover{
+        color: #C80A1E;
+     }
+
+     .almp_right_title{
+        margin-top: 150px;
+     }
+
+     .almp_right_title > li{
+        margin-top: 10px;
+     }
+
+     .almp_right_title > li > a{
+        font-size: 0.9em;
+        font-weight: 400;
+        transition: 0.3s;
+     }
+
+     .almp_right_title > li > a:hover{
+        color: #C80A1E;
+     }
+
+     .transparent {
+	    display: none;
+	    position: fixed;
+	    left: 0;
+	    right: 0;
+	    top: 0;
+	    bottom: 0;
+	    z-index: 100;
+	    background-color: rgba(0,0,0,.5);
+     }
+
+     .left_down_ul{
+        position: absolute;
+        width: 100px;
+        height: 180px;
+        background: white;
+        text-align: center;
+        border: 1px solid black;
+        display: none;
+     }
+
+     .left_down_ul > li{
+        font-size: 0.8em;
+        font-weight: 400;
+        margin-top: 12px;
+        cursor: pointer;
+     }
+
+     .down_bed{
+        margin-top: 40px;
+        margin-left: -30px;
+     }
+
+     .iloom_aside_box{
+        position: fixed;
+        left: 86%;
+        top: 80%;
+        z-index: 9999;
+        display: block;
+     }
+
+     .aside_top{
+        width: 70px;
+        height: 70px;
+        background: #F0F0F0;
+        border-radius: 50%;
+        border: none;
+        font-size: 1.8em;
+        cursor: pointer;
+        box-shadow: 3px 3px 3px 3px #999; 
+     }
+
+     .as_chatbot{
+        width: 80px;
+        height: 40px;
+        background: black;
+        border-radius: 20px;
+        text-align: center;
+        margin-top: 10px;
+        padding-top: 5px;
+        box-sizing: border-box;
+        margin-left: -4px;
+     }
+
+     .as_chatbot_btn{
+        color: white;
+        margin-top: 10px;
+        font-weight: 500;
+        font-size: 13px;
+     }
+
+     .as_review{
+        width: 80px;
+        height: 40px;
+        background: black;
+        border-radius: 20px;
+        text-align: center;
+        margin-top: 10px;
+        padding-top: 5px;
+        box-sizing: border-box;
+        margin-left: -4px;
+     }
+
+     .as_review_btn{
+        color: white;
+        margin-top: 10px;
+        font-weight: 500;
+        font-size: 13px;
+     }
+
+     .search_box_layer{
+        width: 100%;
+        height: 400px;
+        background: white;
+        z-index: 9999;
+        position: absolute;
+        position: fixed;
+        top: 50px;
+        display: none;
+
+     }
+
+     .search_box_close{
+        position: absolute;
+        font-size: 1.2em;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: #F0F0F0;
+        text-align: center;
+        right: 37%;
+        top: 71px;
+        cursor: pointer;
+
+     }
+
+     .search_box_close > i{
+        margin-top: 13px;
+        margin-left: 2px;
+     }
+
+     .search_title{
+        margin-left: 40%;
+     }
+
+     .search_box{
+        width: 400px;
+        height: 38px;
+        background: #F0F0F0;
+        border-radius: 20px;
+        border: none;
+        margin-left: 35%;
+        padding-left: 35px;
+        box-sizing: border-box;
+    }
+
+    #search_box_icon{
+        position: absolute;
+        left: 36%;
+        top: 86px;
+    }
+
+    .keyword_title{
+        color: #C80A1E;
+        font-weight: 600;
+        font-size: 0.9em;
+    }
+
+    .contents_keyword{
+        font-size: 0.9em;
+        font-weight: 500;
+        margin-top: 15px;
+    }
+
+    .contents_keyword > li{
+        margin-top: 10px;
+    }
+
+    .keyword_box{
+        border-right: 1px solid #F0F0F0;
+        width: 340px;
+        text-align: center;
+        margin-left: 470px;
+        margin-top: 50px;
+    }
+
+    .sblp_search_box{
+        width: 340px;
+        text-align: center;
+        margin-left: 350px;
+        margin-top: 50px; 
+        float: right;
+        margin-top: -182px;
+        margin-right: 530px;
+    }
+
+
+    .search_keyword{
+        font-size: 0.9em;
+        font-weight: 500;
+        margin-top: 15px;
+    }
+
+    .search_keyword > li{
+        margin-top: 10px;
+    }
+
+    </style>
+     <script>
+
+       $(document).ready(function(){
+        $('.swiper-wrapper').bxSlider({
+          auto: true,
+          speed: 600,
+          pause: 6000,
+          slideMargin: 50,
+          autoHover: true
+       });
+      });
+        
+
+        $(function(){
+         $(".icon_menubar").click(function(){
+           $("#all_menu_layer_popup").show();
+           $(".transparent").show();
+         });
+        $(".layer_close").click(function(){
+           $("#all_menu_layer_popup").hide();
+           $(".transparent").hide();
+         });
+        });
+
+        $( document ).ready( function() {
+        $( window ).scroll( function() {
+          if ( $( this ).scrollTop() > 20 ) {
+            $( '.iloom_aside_box' ).fadeIn();
+          } else {
+            $( '.iloom_aside_box' ).fadeOut();
+          }
+        });
+        $( '.aside_top' ).click( function() {
+          $( 'html, body' ).animate( { scrollTop : 0 }, 400 );
+          return false;
+        });
+      });
+
+      $(function(){
+        $(".search_box_close").click(function(){
+             $(".search_box_layer").hide();
+        });
+      });
+
+      $(function(){
+        $(".icon_search > i").click(function(){
+             $(".search_box_layer").show();
+        });
+      });
+      </script>
+</head>
+<body>
+    <div id="wrap">
+        
+        <div class="iloom_aside_box">
+            <button class="aside_top"><i class="fa-solid fa-caret-up"></i></button>
+            <div class="as_chatbot"><a class="as_chatbot_btn" href="#">챗봇</a></div>
+            <div class="as_review"><a class="as_review_btn" href="#">리뷰</a></div>
+        </div>
+    <div class="header">
+       <div class="icon_menubar"><i class="fa-solid fa-bars"></i></div>
+        <ul class="header_left-menu">
+            <li><a href="#">침실</a></li>
+            <li><a href="포트폴리오_일룸_서브.html">옷장</a></li>
+            <li><a href="#">거실</a></li>
+            <li><a href="#">주방</a></li>
+            <li><a href="#">키즈룸</a></li>
+            <li><a href="#">학생방</a></li>
+            <li><a href="#">서재</a></li>
+            <li class="bar"><a href="#">.</a></li>
+            <li><a href="#">펫</a></li>
+            <li class="bar"><a href="#">.</a></li>
+            <li><a href="#">매거진</a></li>
+            <li class="bar"><a href="#">.</a></li>
+            <li><a href="#">아울렛</a></li>
+        </ul>
+        <div class="logo"><img src="images/iloom_logo.png" alt=""></div>
+        <ul class="header_right-menu">
+            <li><a href="#">이벤트</a></li>
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">회원가입</a></li>
+            <li><a href="#">주문/배송</a></li>
+            <li><a href="#">고객지원</a></li>
+            <li><a href="#">매장안내</a></li>
+        </ul>
+        <div class="icon_search"><i class="fa-solid fa-magnifying-glass"></i></div>
+        <div class="icon_shoppingbasket"><i class="fa-solid fa-cart-shopping"></i></div>
+    </div>
+    <div class="main-swiper">
+        <div class="swiper-wrapper">
+          <img src="images/iloom4.jpg" alt="따뜻한 느낌의 가구사진">
+          <img src="images/iloom5.jpg" alt="남자아이가 그림종이를 붙이고 있는 사진">
+          <img src="images/iloom6.jpg" alt="bts rm이 메모장을 보는 사진">
+        </div>
+    </div>
+    <div id="all_menu_layer_popup">
+        <div class="layer_close">x</div>
+      <div class="layer_title"><a href="#">침실</a>
+         <div class="almp_menu">
+             <div class="layer_sub_title">
+                 <a href="#">침대</a>
+             </div>
+             <ul class="almp_menu_ul">
+                 <li><a href="#">모션베드</a> </li>
+                 <li><a href="#">일반침대</a></li>
+                 <li><a href="#">패밀리침대</a></li>
+                 <li><a href="#">호텔침대</a></li>
+                 <li><a href="#">매트리스</a></li>
+                 <li><a href="#">액세서리</a></li>
+             </ul>
+             <hr>
+             <div class="layer_sub_title">
+                 <a href="#">매트리스</a>
+             </div>
+             <ul class="almp_menu_ul">
+                 <li><a href="#">매트리스</a> </li>
+                 <li><a href="#">커버/패드</a></li>
+             </ul>
+             <hr>
+             <div class="layer_sub_title">
+                 <a href="#">수납/드레스룸</a>
+             </div>
+             <ul class="almp_menu_ul">
+                 <li><a href="#">드레스룸</a> </li>
+                 <li><a href="#">수납가구/ACC</a></li>
+             </ul>
+             <hr>
+             <div class="layer_sub_title">
+                 <a href="#">수납장</a>
+             </div>
+             <ul class="almp_menu_ul">
+                 <li><a href="#">협탁</a> </li>
+                 <li><a href="#">서랍장</a></li>
+                 <li><a href="#">파티션수납장</a></li>
+             </ul>
+             <hr>
+             <div class="layer_sub_title">
+                 <a href="#">화장대</a>
+             </div>
+             <ul class="almp_menu_ul">
+                 <li><a href="#">화장대</a> </li>
+                 <li><a href="#">스툴</a></li>
+                 <li><a href="#">거울/액세서리</a></li>
+             </ul>
+         </div>
+     </div>
+      <div class="layer_title"><a href="#">옷장</a>
+      <div class="almp_menu">
+         <div class="layer_sub_title">
+             <a href="포트폴리오_일룸_서브.html">옷장/붙박이장</a>
+         </div>
+         <hr>
+         </div>        
+     </div>
+      <div class="layer_title"><a href="#">거실</a>
+      <div class="almp_menu">
+         <div class="layer_sub_title">
+             <a href="#">테이블</a>
+         </div>
+         <ul class="almp_menu_ul">
+             <li><a href="#">소파테이블</a> </li>
+             <li><a href="#">패밀리테이블</a></li>
+             <li><a href="#">멀티테이블</a></li>
+             <li><a href="#">액세서리</a></li>
+         </ul>
+         <hr>
+         <div class="layer_sub_title">
+             <a href="#">거실장</a>
+         </div>
+         <ul class="almp_menu_ul">
+             <li><a href="#">거실장</a> </li>
+         </ul>
+         <hr>
+         <div class="layer_sub_title">
+             <a href="#">소파</a>
+         </div>
+         <ul class="almp_menu_ul">
+             <li><a href="#">가죽소파</a> </li>
+             <li><a href="#">패브릭소파</a></li>
+             <li><a href="#">withPET</a></li>
+             <li><a href="#">일자형</a></li>
+             <li><a href="#">카우치/코너</a> </li>
+             <li><a href="#">1인/소파베드</a></li>
+             <li><a href="#">리클라이너</a></li>
+             <li><a href="#">액세서리</a></li>
+         </ul>
+         <hr>
+         <div class="layer_sub_title">
+             <a href="#">수납장</a>
+         </div>
+         <ul class="almp_menu_ul">
+             <li><a href="#">책장</a> </li>
+             <li><a href="#">장식장</a></li>
+             <li><a href="#">서랍장</a></li>
+             <li><a href="#">액세서리</a></li>
+         </ul>
+         <hr>
+         <div class="layer_sub_title">
+             <a href="#">액세서리</a>
+         </div>
+         </div>
+     </div>
+      <div class="layer_title"><a href="#">주방</a>
+      <div class="almp_menu">
+         <div class="layer_sub_title">
+             <a href="#">식탁</a>
+         </div>
+         <ul class="almp_menu_ul">
+             <li><a href="#">식탁</a> </li>
+         </ul>
+         <hr>
+         <div class="layer_sub_title">
+             <a href="#">수납장</a>
+         </div>
+         <ul class="almp_menu_ul">
+             <li><a href="#">수납장</a> </li>
+             <li><a href="#">액세서리</a></li>
+         </ul>
+         <hr>
+         <div class="layer_sub_title">
+             <a href="#">의자</a>
+         </div>
+         </div>
+     </div>
+      <div class="layer_title"><a href="#">키즈룸</a>
+      <div class="almp_menu">
+         <div class="layer_sub_title">
+             <a href="#">침대</a>
+         </div>
+         <ul class="almp_menu_ul">
+             <li><a href="#">침대</a> </li>
+             <li><a href="#">매트리스</a></li>
+             <li><a href="#">액세서리</a></li>
+         </ul>
+         <hr>
+         <div class="layer_sub_title">
+             <a href="#">책상</a>
+         </div>
+         <ul class="almp_menu_ul">
+             <li><a href="#">책상</a> </li>
+             <li><a href="#">액세서리</a></li>
+         </ul>
+         <hr>
+         <div class="layer_sub_title">
+             <a href="#">수납장</a>
+         </div>
+         <ul class="almp_menu_ul">
+             <li><a href="#">서랍/수납장</a> </li>
+             <li><a href="#">책장</a></li>
+             <li><a href="#">옷장/행거</a> </li>
+             <li><a href="#">놀이장</a></li>
+         </ul>
+         <hr>
+         <div class="layer_sub_title">
+             <a href="#">소파/의자</a>
+         </div>
+         <ul class="almp_menu_ul">
+             <li><a href="#">소파</a> </li>
+             <li><a href="#">의자</a></li>
+         </ul>
+         <hr>
+         <div class="layer_sub_title">
+             <a href="#">액세서리</a>
+         </div>
+         </div>
+     </div>
+      <div class="layer_title"><a href="#">학생방</a>
+      <div class="almp_menu">
+         <div class="layer_sub_title">
+             <a href="#">책상</a>
+         </div>
+         <ul class="almp_menu_ul">
+             <li><a href="#">일반형</a> </li>
+             <li><a href="#">기능형</a></li>
+             <li><a href="#">액세서리</a></li>
+         </ul>
+         <hr>
+         <div class="layer_sub_title">
+             <a href="#">책장</a>
+         </div>
+         <ul class="almp_menu_ul">
+             <li><a href="#">책장</a> </li>
+             <li><a href="#">액세서리</a></li>
+         </ul>
+         <hr>
+         <div class="layer_sub_title">
+             <a href="#">수납장</a>
+         </div>
+         <ul class="almp_menu_ul">
+             <li><a href="#">서랍장</a> </li>
+             <li><a href="#">옷장</a></li>
+             <li><a href="#">수납가구/ACC</a></li>
+         </ul>
+         <hr>
+         <div class="layer_sub_title">
+             <a href="#">의자</a>
+         </div>
+         <ul class="almp_menu_ul">
+             <li><a href="#">의자</a> </li>
+             <li><a href="#">액세서리</a></li>
+         </ul>
+         <hr>
+         <div class="layer_sub_title">
+             <a href="#">침대</a>
+         </div>
+         <ul class="almp_menu_ul">
+             <li><a href="#">일반침대</a> </li>
+             <li><a href="#">수납침대</a></li>
+             <li><a href="#">모션침대</a></li>
+             <li><a href="#">매트리스</a></li>
+             <li><a href="#">액세서리</a></li>
+         </ul>
+         </div>
+     </div>
+      <div class="layer_title"><a href="#">서재</a>
+      <div class="almp_menu">
+         <div class="layer_sub_title">
+             <a href="#">책상</a>
+         </div>
+         <ul class="almp_menu_ul">
+             <li><a href="#">일반형</a> </li>
+             <li><a href="#">모션형</a></li>
+             <li><a href="#">액세서리</a></li>
+         </ul>
+         <hr>
+         <div class="layer_sub_title">
+             <a href="#">책장</a>
+         </div>
+         <ul class="almp_menu_ul">
+             <li><a href="#">책장</a> </li>
+             <li><a href="#">액세서리</a></li>
+         </ul>
+         <hr>
+         <div class="layer_sub_title">
+             <a href="#">서랍장</a>
+         </div>
+         <ul class="almp_menu_ul">
+             <li><a href="#">책상서랍</a> </li>
+         </ul>
+         <hr>
+         <div class="layer_sub_title">
+             <a href="#">의자</a>
+         </div>
+         <ul class="almp_menu_ul">
+             <li><a href="#">데스크의자</a> </li>
+             <li><a href="#">프리미엄의자</a></li>
+             <li><a href="#">보조의자</a></li>
+         </ul>
+         <hr>
+         <div class="layer_sub_title">
+             <a href="#">수납장</a>
+         </div>
+         <ul class="almp_menu_ul">
+             <li><a href="#">장식장</a> </li>
+         </ul>
+         </div>
+     </div>
+      <div class="layer_title"><a href="#">펫</a>
+      <div class="almp_menu">
+         <div class="layer_sub_title">
+             <a href="#">고양이</a>
+         </div>
+         <ul class="almp_menu_ul">
+             <li><a href="#">캣타워</a> </li>
+             <li><a href="#">숨숨집</a></li>
+             <li><a href="#">해먹/방석</a></li>
+             <li><a href="#">스텝퍼</a></li>
+             <li><a href="#">펫소파</a></li>
+         </ul>
+         <hr>
+         <div class="layer_sub_title">
+             <a href="#">강아지</a>
+         </div>
+         <ul class="almp_menu_ul">
+             <li><a href="#">하우스/방석</a> </li>
+             <li><a href="#">스텝퍼</a></li>
+             <li><a href="#">펫소파</a></li>
+         </ul>
+         </div>
+         <div class="almp_right_menu">
+          <div class="almp_right_box">
+             <div class="layer_right_txt"><a href="#">매거진</a></div>
+             <div class="layer_right_txt"><a href="#">시리즈</a></div>
+             <div class="layer_right_txt"><a href="#">아울렛</a></div>
+             <div class="layer_right_txt"><a href="#">부품구매</a></div>
+             <ul class="almp_right_title">
+                 <li><a href="#">카탈로그</a></li>
+                 <li><a href="#">전시품 판매</a></li>
+                 <li><a href="#">매장안내</a></li>
+                 <li><a href="#">이벤트</a></li>
+                 <li><a href="#">뉴스</a></li>
+                 <li><a href="#">공지사항</a></li>
+                 <li><a href="#">회사소개</a></li>
+             </ul>
+          </div>
+         </div>
+     </div>
+      <div class="almp_line"></div>
+    </div>
+    <div class="search_box_layer">
+           <div class="search_box_close"><i class="fa-solid fa-xmark"></i></div>
+           <h2 class="search_title">어떤 제품이 궁금하신가요?</h2>
+           <i id="search_box_icon" class="fa-solid fa-magnifying-glass"></i><input class="search_box" type="text">
+           <div class="keyword_box">
+           <div class="keyword_title">추천콘텐츠</div>
+           <ul class="contents_keyword">
+            <li>#로이 뮤트 에디션_with RM</li>
+            <li>#해피투게더_시즌_2_페이백_프로모션</li>
+            <li>#학생방_프로모션_혜택받는_꿀조합</li>
+            <li>#자녀방 꾸미기 노하우 전격공개!</li>
+            <li>#거실을_다이닝룸으로_식탁의해방</li>
+           </ul>
+        </div>
+        <div class="sblp_search_box">
+            <div class="keyword_title">추천검색</div>
+            <ul class="search_keyword">
+                <li>#학생방_책상</li>
+                <li>#쿠시노_아이방조합</li>
+                <li>#업모션_테이블</li>
+                <li>#적립대상_침대프레임</li>
+                <li>#새해맞이_아이선물</li>
+               </ul>
+        </div>
+    </div>
+    <h4>고객님을 위한 제품 추천</h4>
+    <div class="recommended_product">
+        <div class="product"><img src="images/iloom product1.jpg" alt="로이 5단 다리형 책상 세트 1400폭">
+        <p>[일룸] 로이 5단 다리형 책상 세트 1400폭</p>
+         <span style="color: #C80A1E;">729,000</span>     
+    </div>
+        <div class="product"><img src="images/iloom product2.jpg" alt="모션데스크">
+            <p>[일룸] 모션데스크</p>
+            <span style="color: #C80A1E;">1,120,000</span>     
+        </div>
+        <div class="product"><img src="images/iloom product3.jpg" alt="슬라이딩 옷장(2도어,거울형)"> 
+            <p>[일룸] 슬라이딩 옷장(2도어,거울형)</p>
+            <span style="color: #C80A1E;">919,000</span>     
+        </div>
+        <div class="product"><img src="images/iloom product4.jpg" alt="모션베드 캐주얼(라텍스,책상형)">
+            <p>[일룸] 모션베드 캐주얼(라텍스,책상형)</p>
+            <span style="color: #C80A1E;">2,090,000</span>     
+        </div>
+        <div class="product"><img src="images/iloom product5.jpg" alt="볼케R(패브릭,잔동)">
+            <p>[일룸] 볼케R(패브릭,잔동)</p>
+            <span style="color: #C80A1E;">1,890,000</span>     
+        </div>
+    </div>
+    <div id="iloom_img_banners">
+      <img src="images/iloom banner1.jpg" alt="학생방 혜택 이미지 배너">
+      <img src="images/iloom banner2.jpg" alt="옷장,드레스룸 추천 이미지 배너">
+    </div>
+    <div id="iloom_img_banners002">
+        <div class="banner_img"><img src="images/iloom banner3.jpg" alt="이벤트 프로모션 이미지 배너"></div>
+        <div class="banner_img"><img src="images/iloom banner4.jpg" alt="일룸 메거진 이미지 배너"></div>
+        <div class="banner_img"><img src="images/iloom banner5.jpg" alt="구매 후기 이벤트 이미지 배너"></div>
+    </div>
+    <div class="iloom_article_bnr"><img src="images/iloom bnr logo.png" alt="배너 로고 png">
+    <span class="article_txt">일룸으로 달라진 특별한 생활을 만나보세요.</span>
+    <div class="seemore">더보기></div>
+    </div>
+    <div class="iloom_reviews">
+        <div class="review"><img src="images/iloom_review1.jpg" alt="학생방 리뷰 이미지">
+        <div class="pentagram">
+           <span class="iloom_review-star"><img src="images/iloomstar.png" alt="별점 png"></span>
+           <span class="iloom_review-star"><img src="images/iloomstar.png" alt="별점 png"></span>
+           <span class="iloom_review-star"><img src="images/iloomstar.png" alt="별점 png"></span>
+           <span class="iloom_review-star"><img src="images/iloomstar.png" alt="별점 png"></span>
+           <span class="iloom_review-star"><img src="images/iloomstar.png" alt="별점 png"></span>
+           <div class="review_title">지연님의 일룸생활</div>
+           <div class="review_content">깔끔하고 모던한 책상 스타일!</div>
+           <div class="review_product">
+               <img src="images/iloom-review_photo.jpg" alt="가구 본체 사진">
+               <dl class="review-dl">
+                   <dt><span class="review_product-title">맨디 패키지</span></dt>
+                   <dd><span class="review_product-category">학생방</span></dd>
+                   <dd><span class="review_product-price">899,000</span></dd>
+               </dl>
+               <span class="product-likenumber">52</span>
+               <span class="product-likeheart"><img src="images/iloonheart.png" alt="찜 하트 png"> </span>
+           </div>
+        </div>
+        </div>
+        <div class="review"><img src="images/iloom_review2.jpg" alt="소파 가구 리뷰 이미지">
+            <div class="pentagram">
+                <span class="iloom_review-star"><img src="images/iloomstar.png" alt="별점 png"></span>
+                <span class="iloom_review-star"><img src="images/iloomstar.png" alt="별점 png"></span>
+                <span class="iloom_review-star"><img src="images/iloomstar.png" alt="별점 png"></span>
+                <span class="iloom_review-star"><img src="images/iloomstar.png" alt="별점 png"></span>
+                <span class="iloom_review-star"><img src="images/iloomstar.png" alt="별점 png"></span>
+                <div class="review_title">지은님의 일룸생활</div>
+                <div class="review_content">색감이쁘고 감각적인 스타일!</div>
+                <div class="review_product">
+                    <img src="images/iloom-review_photo2.jpg" alt="소파 본체 이미지">
+                    <dl class="review-dl">
+                        <dt><span class="review_product-title">베를린 3인</span></dt>
+                        <dd><span class="review_product-category">거실</span></dd>
+                        <dd><span class="review_product-price">2,690,000</span></dd>
+                    </dl>
+                    <span class="product-likenumber">5</span>
+                    <span class="product-likeheart"><img src="images/iloonheart.png" alt="찜 하트 png"> </span>
+                </div>
+             </div>
+            </div>
+        <div class="review"><img src="images/iloom_review3.jpg" alt="침대 리뷰 이미지">
+            <div class="pentagram">
+                <span class="iloom_review-star"><img src="images/iloomstar.png" alt="별점 png"></span>
+                <span class="iloom_review-star"><img src="images/iloomstar.png" alt="별점 png"></span>
+                <span class="iloom_review-star"><img src="images/iloomstar.png" alt="별점 png"></span>
+                <span class="iloom_review-star"><img src="images/iloomstar.png" alt="별점 png"></span>
+                <span class="iloom_review-star"><img src="images/iloomstar.png" alt="별점 png"></span>
+                <div class="review_title">지훈님의 일룸생활</div>
+                <div class="review_content">편안하고 심신의 안정을 주는 스타일!</div>
+                <div class="review_product">
+                    <img src="images/iloom_review-photo3.png" alt="침대 본체 이미지">
+                    <dl class="review-dl">
+                        <dt><span class="review_product-title">바젤 심플리</span></dt>
+                        <dd><span class="review_product-category">침실</span></dd>
+                        <dd><span class="review_product-price">759,000</span></dd>
+                    </dl>
+                    <span class="product-likenumber">87</span>
+                    <span class="product-likeheart"><img src="images/iloonheart.png" alt="찜 하트 png"> </span>
+                </div>
+             </div>
+            </div>
+        <div class="review"><img src="images/iloom_review4.jpg" alt="책상 리뷰 이미지">
+            <div class="pentagram">
+                <span class="iloom_review-star"><img src="images/iloomstar.png" alt="별점 png"></span>
+                <span class="iloom_review-star"><img src="images/iloomstar.png" alt="별점 png"></span>
+                <span class="iloom_review-star"><img src="images/iloomstar.png" alt="별점 png"></span>
+                <span class="iloom_review-star"><img src="images/iloomstar.png" alt="별점 png"></span>
+                <span class="iloom_review-star"><img src="images/iloomstar.png" alt="별점 png"></span>
+                <div class="review_title">예지님의 일룸생활</div>
+                <div class="review_content">집중 잘되게 자세 잡아주는 스타일!</div>
+                <div class="review_product">
+                    <img src="images/iloom_review-photo4.jpg" alt="책상 본체 이미지">
+                    <dl class="review-dl">
+                        <dt><span class="review_product-title">매쉬의자</span></dt>
+                        <dd><span class="review_product-category">학생방</span></dd>
+                        <dd><span class="review_product-price">279,000</span></dd>
+                    </dl>
+                    <span class="product-likenumber">147</span>
+                    <span class="product-likeheart"><img src="images/iloonheart.png" alt="찜 하트 png"> </span>
+                </div>
+             </div>
+            </div>
+        </div>
+    <div class="insta-section">
+        <div class="insta_inr">
+        <div class="insta_title"><img src="images/insta_title.png" alt="인스타그램 타이틀 png"></div>
+        <div class="insta_subtitle"><img src="images/insta_title2.png" alt="인스타그램 서브 타이틀 png"></div>
+        <div class="iloom_instaphoto_section">
+        <a href="https://www.instagram.com/iloom_official/"><div class="iloom_instaphoto"><img src="images/iloom_insta1.jpg" alt="2024년 rm 화보 이미지"></div></a>
+        <a href="https://www.instagram.com/iloom_official/"><div class="iloom_instaphoto"> <img src="images/iloom_insta2.jpg" alt="고양이가 있는 캣타워 이미지"></div></a>
+        <a href="https://www.instagram.com/iloom_official/"><div class="iloom_instaphoto"><img src="images/iloom_insta3.jpg" alt="특수 소파 이미지"></div></a>
+        <a href="https://www.instagram.com/iloom_official/"><div class="iloom_instaphoto"><img src="images/iloom_insta4.jpg" alt="rm화보 이미지"></div></a>
+        <a href="https://www.instagram.com/iloom_official/"><div class="iloom_instaphoto"><img src="images/iloom_insta5.jpg" alt="파란 소파 이미지"></div></a>
+    </div>
+    </div>
+</div>
+    <div class="quickmn_section">
+    <div class="quickmn_title"><img src="images/quick menu_title.png" alt="퀵 메뉴 타이틀 png"></div>
+    <div class="map-icon"><i class="fa-solid fa-map fa-3x"></i>
+    </div>
+    <p class="map-p">
+        <span class="f15_arial">Store</span><br>
+        <span class="f17_noto">매장안내</span>
+    </p>
+    <div class="tag-icon"><i class="fa-solid fa-tag fa-3x"></i></div>
+    <p class="tag-p">
+        <span class="f15_arial">Refurb</span><br>
+        <span class="f17_noto">전시품 안내</span>
+    </p>
+</div>
+<div class="notice_section">
+    <div class="notice_title"><img src="images/notice_title.png" alt="노티스 타이틀 png"></div>
+    <ul class="notice_list">
+        <li>2024년 1월 무이자 할부 안내 <span class="ntcDt01">2023.12.29</span></li>
+        <li>2023년 12월 무이자 할부 안내 <span class="ntcDt">2023.11.30</span></li>
+        <li>2023년 11월 무이자 할부 안내 <span class="ntcDt">2023.11.01</span></li>
+        <li>일룸 개인정보 처리방침 개정 사전 안내 <span class="ntcDt04">2023.10.27</span></li>
+    </ul>
+</div>
+<footer>
+  <div class="footerinr">
+      <div class="footerinr_box">
+      <div class="footerlogo"><img src="images/footer_logo.png" alt="푸터 로고 png"></div>
+      <ul class="footer_item_title">
+          <li>ABOUT
+              <ul class="footer_item_sub">
+                  <li>회사소개</li>
+                  <li>매장안내</li>
+                  <li>인재채용</li>
+              </ul>
+          </li>
+          <li>SUPPORT
+            <ul class="footer_item_sub">
+                <li>고객지원</li>
+                <li>서비스센터</li>
+                <li>대리점 개설안내</li>
+            </ul>
+          </li>
+          <li>INFO
+            <ul class="footer_item_sub">
+                <li>이용약관</li>
+                <li>개인정보 처리방침</li>
+            </ul>
+          </li>
+      </ul>
+      <div class="footer_dl_box">
+      <dl class="footer_item_dl">
+          <dt>빠른 상담문의</dt>
+          <dd><button class="footer_kakao_btn"><a class="footer_txt" href="#">챗봇상담</a></button></dd>
+      </dl>
+      <dl class="footer_item_dl">
+        <dt>서비스 문의 및 신청</dt>
+        <dd><button class="footer_service_btn"><a class="footer_txt" href="#">일룸 서비스 센터 바로가기</a></button></dd>
+    </dl>
+      <dl class="footer_item_dl">
+        <dt>고객센터 전화 문의</dt>
+        <dd>
+            <span class="footer_dl_inr">1577-5670</span>
+            <span class="footer_dl_inr">9:30 ~ 17:30(점심시간 12:30 ~ 13:30)</span>
+            <span class="footer_dl_inr">9:30 ~ 12:30 (쇼핑몰 구매상담 제외)</span>
+        </dd>
+    </dl>
+    </div>
+    </div>
+  </div>
+</footer>
+<div class="transparent"></div>
+</div>
+
+<script type="text/javascript">
+     $('.swiper-wrapper').slick({
+            autoplay: true,
+            autoplaySpeed: 2000
+        }); 
+</script>
+</body>
+</html>

@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일룸 포트폴리오</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7156c50ef7.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+
+    body,html{
+        margin: 0 auto; 
+        font-family: 'Nanum Brush Script', cursive;
+        font-family: 'Nanum Pen Script', cursive;
+        font-family: 'Noto Sans KR', sans-serif;
+    }
+
+    ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    a{
+        text-decoration: none;
+        color: black;
+    }
+        
+    .header{
+        width: 100%;
+        height: 50px;
+        background: white;
+        display: flex;
+        position: relative;
+        background: white;
+        position: sticky;
+        top: 0;
+        z-index: 2;
+    }
+
+    .icon_menubar{
+            position: absolute;
+            top: 12px;
+            cursor: pointer;
+    }
+
+    .header_left-menu{
+            display: flex;
+            position: absolute;
+            left: 20px;
+            top: 10px;
+    }
+
+    .header_left-menu > li{
+            margin-left: 8px;
+    }
+
+    .header_left-menu > li > a{
+            color: black;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.8em;
+        }
+
+    .bar{
+            padding: 0 0 10px 0;
+            margin-top: -5px;         
+        }
+
+    .logo{
+            position: absolute;
+            width: 90px;
+            left: 46%;
+            top: 10px
+    }
+
+    .header_right-menu{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            position: absolute;
+            display: flex;
+            right: 5%;
+            top: 10px;
+    }
+
+    .header_right-menu > li{
+            margin-left: 10px;
+    }
+
+    .header_right-menu > li > a{
+            color: black;
+            text-decoration: none;
+            font-size: 0.8em;
+    }
+
+    .icon_search{
+            position: absolute;
+            right: 30px;
+            top: 10px;
+            cursor: pointer;
+    }
+
+    .icon_shoppingbasket{
+            position: absolute;
+            right: 0;
+            top: 10px;
+
+    }
+
+    #all_menu_layer_popup{
+         width: 1100px;
+         height: 900px;
+         background: white;
+         margin-top: -40px;
+         z-index: 999;
+         position: relative;
+         position: absolute;
+         display: none;
+         position: fixed;
+         margin-left: 10px;
+     }
+
+    .layer_title{
+         width: 100px;
+         height: 30px;
+         float: left;
+         text-align: center;
+         margin-left: 15px;
+         margin-top: 10px;
+     }
+
+    .layer_title > a{
+         font-size: 18px;
+         font-weight: 600;
+     }
+
+    .almp_line{
+         width: 895px;
+         height: 1px;
+         border-bottom: 1px solid #aaaaaa;
+         margin-top: 50px;
+         margin-left: 15px;
+     }
+
+    .almp_menu{
+         width: 100px;
+         height: 820px;
+         border-right: 1px solid #F0F0F0;
+         margin-top: 40px;
+     }
+
+    .layer_sub_title > a{
+         font-size: 0.9em;
+         font-weight: 600;
+     }
+
+
+    .almp_menu_ul > li{
+         margin-top: 7px;
+     }
+
+    .almp_menu_ul > li > a{
+         font-size: 0.8em;
+     }
+
+     hr{
+         width: 16px;
+         color: #aaaaaa;
+         margin-top: 20px;
+         margin-bottom: 20px;
+     }
+
+    .layer_line{
+         height: 775px;
+         border-right: 1px solid #aaaaaa;
+     }
+
+    .almp_right_menu{
+         width: 179px;
+         height: 900px;
+         position: absolute;
+         background: #f0f0f0;
+         float: left;
+         right: 0;
+         top: 0;
+     }
+
+    .layer_close{
+         position: absolute;
+         right: 10px;
+         font-size: 1.8em;
+         z-index: 999;
+         cursor: pointer;
+     }
+
+    .almp_right_box{
+         width: 100px;
+         margin-left: 38px;
+         margin-top: 58%;
+     }
+
+    .layer_right_txt{
+         width: 100px;
+         height: 50px;
+         margin-top: 30%;
+     }
+
+    .layer_right_txt > a{
+         color: black;
+         text-decoration: none;
+         font-weight: 800;
+         font-size: 1.2em;
+         transition: 0.3s;
+     }
+
+    .layer_right_txt > a:hover{
+        color: #C80A1E;
+     }
+
+    .almp_right_title{
+        margin-top: 150px;
+     }
+
+    .almp_right_title > li{
+        margin-top: 10px;
+     }
+
+    .almp_right_title > li > a{
+        font-size: 0.9em;
+        font-weight: 400;
+        transition: 0.3s;
+     }
+
+    .almp_right_title > li > a:hover{
+        color: #C80A1E;
+     }
+
+    .transparent {
+	    display: none;
+	    position: fixed;
+	    left: 0;
+	    right: 0;
+	    top: 0;
+	    bottom: 0;
+	    z-index: 100;
+	    background-color: rgba(0,0,0,.5);
+     }
+
+    .left_down_ul{
+        position: absolute;
+        width: 100px;
+        height: 180px;
+        background: white;
+        text-align: center;
+        border: 1px solid black;
+        display: none;
+     }
+
+    .left_down_ul > li{
+        font-size: 0.8em;
+        font-weight: 400;
+        margin-top: 12px;
+        cursor: pointer;
+     }
+
+    .down_bed{
+        margin-top: 40px;
+        margin-left: -30px;
+     }
+
+    .iloom_aside_box{
+        position: fixed;
+        left: 90%;
+        top: 80%;
+        z-index: 9999;
+        display: block;
+     }
+
+    .aside_top{
+        width: 70px;
+        height: 70px;
+        background: #F0F0F0;
+        border-radius: 50%;
+        border: none;
+        font-size: 1.8em;
+        cursor: pointer;
+         box-shadow: 3px 3px 3px 3px #999;
+     }
+
+    .as_chatbot{
+        width: 80px;
+        height: 40px;
+        background: black;
+        border-radius: 20px;
+        text-align: center;
+        margin-top: 10px;
+        padding-top: 5px;
+        box-sizing: border-box;
+        margin-left: -4px;
+     }
+
+    .as_chatbot_btn{
+        color: white;
+        margin-top: 10px;
+        font-weight: 500;
+        font-size: 13px;
+     }
+
+    .as_review{
+        width: 80px;
+        height: 40px;
+        background: black;
+        border-radius: 20px;
+        text-align: center;
+        margin-top: 10px;
+        padding-top: 5px;
+        box-sizing: border-box;
+        margin-left: -4px;
+     }
+
+    .as_review_btn{
+        color: white;
+        margin-top: 10px;
+        font-weight: 500;
+        font-size: 13px;
+     }
+
+    .search_box_layer{
+        width: 100%;
+        height: 400px;
+        background: white;
+        z-index: 9;
+        position: absolute;
+        position: fixed;
+        top: 50px;
+        display: none;
+
+     }
+
+    .search_box_close{
+        position: absolute;
+        font-size: 1.2em;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: #F0F0F0;
+        text-align: center;
+        right: 37%;
+        top: 71px;
+        cursor: pointer;
+
+     }
+
+    .search_box_close > i{
+        margin-top: 13px;
+        margin-left: 2px;
+     }
+
+    .search_title{
+        margin-left: 40%;
+     }
+
+    .search_box{
+        width: 400px;
+        height: 38px;
+        background: #F0F0F0;
+        border-radius: 20px;
+        border: none;
+        margin-left: 35%;
+        padding-left: 35px;
+        box-sizing: border-box;
+    }
+
+    #search_box_icon{
+        position: absolute;
+        left: 36%;
+        top: 86px;
+    }
+
+    .keyword_title{
+        color: #C80A1E;
+        font-weight: 600;
+        font-size: 0.9em;
+    }
+
+    .contents_keyword{
+        font-size: 0.9em;
+        font-weight: 500;
+        margin-top: 15px;
+    }
+
+    .contents_keyword > li{
+        margin-top: 10px;
+    }
+
+    .keyword_box{
+        border-right: 1px solid #F0F0F0;
+        width: 340px;
+        text-align: center;
+        margin-left:  470px;
+        margin-top: 50px;
+    }
+
+    .sblp_search_box{
+        width: 340px;
+        text-align: center;
+        margin-left: 350px;
+        margin-top: 50px; 
+        float: right;
+        margin-top: -182px;
+        margin-right: 530px;
+    }
+
+    .search_keyword{
+        font-size: 0.9em;
+        font-weight: 500;
+        margin-top: 15px;
+    }
+
+    .search_keyword > li{
+        margin-top: 10px;
+    }
+
+    .iloom_aside_box{
+        position: fixed;
+        left: 86%;
+        top: 80%;
+        z-index: 9999;
+        display: block;
+     }
+
+     .aside_top{
+        width: 70px;
+        height: 70px;
+        background: #F0F0F0;
+        border-radius: 50%;
+        border: none;
+        font-size: 1.8em;
+        cursor: pointer;
+     }
+
+     .as_chatbot{
+        width: 80px;
+        height: 40px;
+        background: black;
+        border-radius: 20px;
+        text-align: center;
+        margin-top: 10px;
+        padding-top: 5px;
+        box-sizing: border-box;
+        margin-left: -4px;
+     }
+
+     .as_chatbot_btn{
+        color: white;
+        margin-top: 10px;
+        font-weight: 500;
+        font-size: 13px;
+     }
+
+     .as_review{
+        width: 80px;
+        height: 40px;
+        background: black;
+        border-radius: 20px;
+        text-align: center;
+        margin-top: 10px;
+        padding-top: 5px;
+        box-sizing: border-box;
+        margin-left: -4px;
+     }
+
+     .as_review_btn{
+        color: white;
+        margin-top: 10px;
+        font-weight: 500;
+        font-size: 13px;
+     }
+
+
+
+    .iloom_closet_main{
+        margin: 0 auto;
+        width: 100%;
+        margin-top: 15px;
+        position: relative;
+    }
+
+    .iloom_closet_main > img{
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .closet_main_h2{
+        position: absolute;
+        top: 40%;
+        left: 44%;
+        z-index: 1;
+        letter-spacing: 5px;
+        color: white;
+        font-size: 2.8em;   
+    }
+
+    section{
+        width: 1280px;
+        margin: 0 auto;
+    }
+
+    .tct_noto{
+        font-size: 1.8em;
+        margin-left: 47%;
+        margin-top: 70px;
+    }
+
+    .category_list{
+        width: 100%;
+        height: 60px;
+        border: 1px solid #aaaaaa;
+        display: flex;
+        align-items: center;
+        top: 30px;
+        position: relative;
+        margin: 0 auto;
+    }
+
+    dt{
+        font-weight: 600;
+        margin-left: 40px;
+        font-size: 0.9em;
+    }
+
+    .category_list > a{
+        margin-left: 40px;
+        font-size: 0.9em;
+        color: #C80A1E;
+    }
+
+    .h60 > li >.hits {
+	    color: black;
+    }
+    .h60 > li >.newer {
+        color:black;
+    }
+    .h60 > li >.maxPriceHigh {
+        color:black;
+    }
+    .h60 > li >.star {
+        color: black;
+    }
+    .h60 > li >.hits.on {
+	    color: #C80A1E;
+    }
+    .h60 > li >.newer.on {
+        color:  #C80A1E;
+    }
+    .h60 > li >.maxPriceHigh.on {
+        color: #C80A1E;
+    }
+    .h60 > li >.star.on {
+        color:  #C80A1E;
+    }
+
+    .h60{
+        position: relative;
+        top: 50px;
+        width: 1100px;
+        right: -178px;
+    }
+
+    .hits,.newer,.star,.maxPriceHigh{
+        position: absolute;
+        font-size: 0.9em;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    .hits{
+        right: 17%;
+        color: #C80A1E;
+    }
+
+    .newer{
+        right: 11%;
+    }
+
+    .maxPriceHigh{
+        right: 6%;
+    }
+
+    .star{
+        right: 0;
+    } 
+
+    .proUl_inr > img{
+        width: 300px;
+        height: auto;
+        cursor: pointer;
+
+    }
+
+    .proUl_inr > p{
+        font-size: 0.9em;
+    }
+
+    .proUl{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 90px;
+      
+    }
+
+    .closet_txt{
+        width: 100px;
+        display: block;
+    }
+
+    .inr_txt{
+        font-weight: 600;
+        margin-bottom: -10px;
+    }
+
+    .proUl02{
+        width: 955px;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 90px;
+    }
+
+    .proUl02_inr > img{
+        width: 380px;
+        height: auto;
+    }
+
+    .proUl02_inr > p{
+        font-size: 0.9em;
+    }
+
+    .page{
+        border-radius: 50%;
+        height: 20px;
+        width: 20px;
+        border: 1px solid gray;
+        font-size: 0.7em;
+        text-align: center;
+        margin-left: 50%;
+        margin-top: 100px;
+    }
+
+    footer{
+          height: 257px;
+          background: #F0F0F0;
+          margin-top: 90px;
+      }
+
+    .footerinr{
+          width: 1200px;
+          height: 437px;
+          margin: 0 auto;
+          padding: 55px 20px 20px;
+          position: relative;
+          box-sizing: border-box;
+    }
+
+    .footerinr_box{
+          width: 100%;
+          height: 220px;
+          display: flex;
+    }
+
+    .footerlogo{
+          width: 100px;
+    }
+
+    .footer_item_title{
+          display: flex;
+          justify-content: space-between;
+          margin-left: 80px;
+    }
+
+    .footer_item_title > li{
+          margin-right: 90px;
+          font-weight: 600;
+          font-size: 0.9em;
+      }
+
+    .footer_item_sub{
+          margin-left: 2px;
+          width: 100px;
+      }
+
+    .footer_item_sub > li{
+          margin-top: 10px;
+          font-size: 0.8em;
+          font-weight: 400;
+          cursor: pointer;
+      }
+
+    .footer_item_dl{
+         display: flex;
+         margin-left: 10px;
+         margin-top: -3px;
+         width: 420px;
+     }
+
+
+     .footer_item_dl > dd{
+         margin-left: 10px;
+     }
+
+
+     .footer_dl_inr{
+         display: block;
+         margin-left: 10px;
+         font-size: 0.8em;
+     }
+
+     .footer_txt{
+         text-decoration: none;
+         color: black;
+         font-weight: 600;
+     }
+
+
+     .footer_kakao_btn{
+         width: 100px;
+         height: 30px;
+         background: #ffffffcc;
+         border: none;
+         margin-left: 40px;
+     }
+
+     .footer_service_btn{
+         width: 180px;
+         height: 30px;
+         background: #ffffffcc;
+         border: none;
+         margin-left: 5px;
+     }
+
+
+    
+    </style>
+     <script>
+    $(function(){
+        $(".icon_menubar").click(function(){
+          $("#all_menu_layer_popup").show();
+          $(".transparent").show();
+        });
+       $(".layer_close").click(function(){
+          $("#all_menu_layer_popup").hide();
+          $(".transparent").hide();
+        });
+       });
+
+       $( document ).ready( function() {
+       $( window ).scroll( function() {
+         if ( $( this ).scrollTop() > 20 ) {
+           $( '.iloom_aside_box' ).fadeIn();
+         } else {
+           $( '.iloom_aside_box' ).fadeOut();
+         }
+       });
+       $( '.aside_top' ).click( function() {
+         $( 'html, body' ).animate( { scrollTop : 0 }, 400 );
+         return false;
+       });
+     });
+
+       $(function(){
+       $(".search_box_close").click(function(){
+            $(".search_box_layer").hide();
+       });
+     });
+
+       $(function(){
+       $(".icon_search > i").click(function(){
+            $(".search_box_layer").show();
+       });
+     });
+
+
+     $(function(){       
+        $(".h60 > li > span").click(function(){
+            $(".h60 > li > span").removeClass("on");
+	        $(this).addClass("on");
+        });
+     });
+
+     </script>
+</head>
+<body>
+        <div class="iloom_aside_box">
+            <button class="aside_top"><i class="fa-solid fa-caret-up"></i></button>
+            <div class="as_chatbot"><a class="as_chatbot_btn" href="#">챗봇</a></div>
+            <div class="as_review"><a class="as_review_btn" href="#">리뷰</a></div>
+        </div>
+    <div class="header">
+        <div class="icon_menubar"><i class="fa-solid fa-bars"></i></div>
+         <ul class="header_left-menu">
+             <li><a href="#">침실</a></li>
+             <li><a href="#">옷장</a></li>
+             <li><a href="#">거실</a></li>
+             <li><a href="#">주방</a></li>
+             <li><a href="#">키즈룸</a></li>
+             <li><a href="#">학생방</a></li>
+             <li><a href="#">서재</a></li>
+             <li class="bar"><a href="#">.</a></li>
+             <li><a href="#">펫</a></li>
+             <li class="bar"><a href="#">.</a></li>
+             <li><a href="#">매거진</a></li>
+             <li class="bar"><a href="#">.</a></li>
+             <li><a href="#">아울렛</a></li>
+         </ul>
+         <a href="포트폴리오_일룸_메인 .html"><div class="logo"><img src="images/iloom_logo.png" alt=""></div></a>
+         <ul class="header_right-menu">
+             <li><a href="#">이벤트</a></li>
+             <li><a href="#">로그인</a></li>
+             <li><a href="#">회원가입</a></li>
+             <li><a href="#">주문/배송</a></li>
+             <li><a href="#">고객지원</a></li>
+             <li><a href="#">매장안내</a></li>
+         </ul>
+         <div class="icon_search"><i class="fa-solid fa-magnifying-glass"></i></div>
+         <div class="icon_shoppingbasket"><i class="fa-solid fa-cart-shopping"></i></div>
+     </div>
+     <div id="all_menu_layer_popup">
+         <div class="layer_close">x</div>
+       <div class="layer_title"><a href="#">침실</a>
+          <div class="almp_menu">
+              <div class="layer_sub_title">
+                  <a href="#">침대</a>
+              </div>
+              <ul class="almp_menu_ul">
+                  <li><a href="#">모션베드</a> </li>
+                  <li><a href="#">일반침대</a></li>
+                  <li><a href="#">패밀리침대</a></li>
+                  <li><a href="#">호텔침대</a></li>
+                  <li><a href="#">매트리스</a></li>
+                  <li><a href="#">액세서리</a></li>
+              </ul>
+              <hr>
+              <div class="layer_sub_title">
+                  <a href="#">매트리스</a>
+              </div>
+              <ul class="almp_menu_ul">
+                  <li><a href="#">매트리스</a> </li>
+                  <li><a href="#">커버/패드</a></li>
+              </ul>
+              <hr>
+              <div class="layer_sub_title">
+                  <a href="#">수납/드레스룸</a>
+              </div>
+              <ul class="almp_menu_ul">
+                  <li><a href="#">드레스룸</a> </li>
+                  <li><a href="#">수납가구/ACC</a></li>
+              </ul>
+              <hr>
+              <div class="layer_sub_title">
+                  <a href="#">수납장</a>
+              </div>
+              <ul class="almp_menu_ul">
+                  <li><a href="#">협탁</a> </li>
+                  <li><a href="#">서랍장</a></li>
+                  <li><a href="#">파티션수납장</a></li>
+              </ul>
+              <hr>
+              <div class="layer_sub_title">
+                  <a href="#">화장대</a>
+              </div>
+              <ul class="almp_menu_ul">
+                  <li><a href="#">화장대</a> </li>
+                  <li><a href="#">스툴</a></li>
+                  <li><a href="#">거울/액세서리</a></li>
+              </ul>
+          </div>
+      </div>
+       <div class="layer_title"><a href="#">옷장</a>
+       <div class="almp_menu">
+          <div class="layer_sub_title">
+              <a href="#">옷장/붙박이장</a>
+          </div>
+          <hr>
+          </div>        
+      </div>
+       <div class="layer_title"><a href="#">거실</a>
+       <div class="almp_menu">
+          <div class="layer_sub_title">
+              <a href="#">테이블</a>
+          </div>
+          <ul class="almp_menu_ul">
+              <li><a href="#">소파테이블</a> </li>
+              <li><a href="#">패밀리테이블</a></li>
+              <li><a href="#">멀티테이블</a></li>
+              <li><a href="#">액세서리</a></li>
+          </ul>
+          <hr>
+          <div class="layer_sub_title">
+              <a href="#">거실장</a>
+          </div>
+          <ul class="almp_menu_ul">
+              <li><a href="#">거실장</a> </li>
+          </ul>
+          <hr>
+          <div class="layer_sub_title">
+              <a href="#">소파</a>
+          </div>
+          <ul class="almp_menu_ul">
+              <li><a href="#">가죽소파</a> </li>
+              <li><a href="#">패브릭소파</a></li>
+              <li><a href="#">withPET</a></li>
+              <li><a href="#">일자형</a></li>
+              <li><a href="#">카우치/코너</a> </li>
+              <li><a href="#">1인/소파베드</a></li>
+              <li><a href="#">리클라이너</a></li>
+              <li><a href="#">액세서리</a></li>
+          </ul>
+          <hr>
+          <div class="layer_sub_title">
+              <a href="#">수납장</a>
+          </div>
+          <ul class="almp_menu_ul">
+              <li><a href="#">책장</a> </li>
+              <li><a href="#">장식장</a></li>
+              <li><a href="#">서랍장</a></li>
+              <li><a href="#">액세서리</a></li>
+          </ul>
+          <hr>
+          <div class="layer_sub_title">
+              <a href="#">액세서리</a>
+          </div>
+          </div>
+      </div>
+       <div class="layer_title"><a href="#">주방</a>
+       <div class="almp_menu">
+          <div class="layer_sub_title">
+              <a href="#">식탁</a>
+          </div>
+          <ul class="almp_menu_ul">
+              <li><a href="#">식탁</a> </li>
+          </ul>
+          <hr>
+          <div class="layer_sub_title">
+              <a href="#">수납장</a>
+          </div>
+          <ul class="almp_menu_ul">
+              <li><a href="#">수납장</a> </li>
+              <li><a href="#">액세서리</a></li>
+          </ul>
+          <hr>
+          <div class="layer_sub_title">
+              <a href="#">의자</a>
+          </div>
+          </div>
+      </div>
+       <div class="layer_title"><a href="#">키즈룸</a>
+       <div class="almp_menu">
+          <div class="layer_sub_title">
+              <a href="#">침대</a>
+          </div>
+          <ul class="almp_menu_ul">
+              <li><a href="#">침대</a> </li>
+              <li><a href="#">매트리스</a></li>
+              <li><a href="#">액세서리</a></li>
+          </ul>
+          <hr>
+          <div class="layer_sub_title">
+              <a href="#">책상</a>
+          </div>
+          <ul class="almp_menu_ul">
+              <li><a href="#">책상</a> </li>
+              <li><a href="#">액세서리</a></li>
+          </ul>
+          <hr>
+          <div class="layer_sub_title">
+              <a href="#">수납장</a>
+          </div>
+          <ul class="almp_menu_ul">
+              <li><a href="#">서랍/수납장</a> </li>
+              <li><a href="#">책장</a></li>
+              <li><a href="#">옷장/행거</a> </li>
+              <li><a href="#">놀이장</a></li>
+          </ul>
+          <hr>
+          <div class="layer_sub_title">
+              <a href="#">소파/의자</a>
+          </div>
+          <ul class="almp_menu_ul">
+              <li><a href="#">소파</a> </li>
+              <li><a href="#">의자</a></li>
+          </ul>
+          <hr>
+          <div class="layer_sub_title">
+              <a href="#">액세서리</a>
+          </div>
+          </div>
+      </div>
+       <div class="layer_title"><a href="#">학생방</a>
+       <div class="almp_menu">
+          <div class="layer_sub_title">
+              <a href="#">책상</a>
+          </div>
+          <ul class="almp_menu_ul">
+              <li><a href="#">일반형</a> </li>
+              <li><a href="#">기능형</a></li>
+              <li><a href="#">액세서리</a></li>
+          </ul>
+          <hr>
+          <div class="layer_sub_title">
+              <a href="#">책장</a>
+          </div>
+          <ul class="almp_menu_ul">
+              <li><a href="#">책장</a> </li>
+              <li><a href="#">액세서리</a></li>
+          </ul>
+          <hr>
+          <div class="layer_sub_title">
+              <a href="#">수납장</a>
+          </div>
+          <ul class="almp_menu_ul">
+              <li><a href="#">서랍장</a> </li>
+              <li><a href="#">옷장</a></li>
+              <li><a href="#">수납가구/ACC</a></li>
+          </ul>
+          <hr>
+          <div class="layer_sub_title">
+              <a href="#">의자</a>
+          </div>
+          <ul class="almp_menu_ul">
+              <li><a href="#">의자</a> </li>
+              <li><a href="#">액세서리</a></li>
+          </ul>
+          <hr>
+          <div class="layer_sub_title">
+              <a href="#">침대</a>
+          </div>
+          <ul class="almp_menu_ul">
+              <li><a href="#">일반침대</a> </li>
+              <li><a href="#">수납침대</a></li>
+              <li><a href="#">모션침대</a></li>
+              <li><a href="#">매트리스</a></li>
+              <li><a href="#">액세서리</a></li>
+          </ul>
+          </div>
+      </div>
+       <div class="layer_title"><a href="#">서재</a>
+       <div class="almp_menu">
+          <div class="layer_sub_title">
+              <a href="#">책상</a>
+          </div>
+          <ul class="almp_menu_ul">
+              <li><a href="#">일반형</a> </li>
+              <li><a href="#">모션형</a></li>
+              <li><a href="#">액세서리</a></li>
+          </ul>
+          <hr>
+          <div class="layer_sub_title">
+              <a href="#">책장</a>
+          </div>
+          <ul class="almp_menu_ul">
+              <li><a href="#">책장</a> </li>
+              <li><a href="#">액세서리</a></li>
+          </ul>
+          <hr>
+          <div class="layer_sub_title">
+              <a href="#">서랍장</a>
+          </div>
+          <ul class="almp_menu_ul">
+              <li><a href="#">책상서랍</a> </li>
+          </ul>
+          <hr>
+          <div class="layer_sub_title">
+              <a href="#">의자</a>
+          </div>
+          <ul class="almp_menu_ul">
+              <li><a href="#">데스크의자</a> </li>
+              <li><a href="#">프리미엄의자</a></li>
+              <li><a href="#">보조의자</a></li>
+          </ul>
+          <hr>
+          <div class="layer_sub_title">
+              <a href="#">수납장</a>
+          </div>
+          <ul class="almp_menu_ul">
+              <li><a href="#">장식장</a> </li>
+          </ul>
+          </div>
+      </div>
+       <div class="layer_title"><a href="#">펫</a>
+       <div class="almp_menu">
+          <div class="layer_sub_title">
+              <a href="#">고양이</a>
+          </div>
+          <ul class="almp_menu_ul">
+              <li><a href="#">캣타워</a> </li>
+              <li><a href="#">숨숨집</a></li>
+              <li><a href="#">해먹/방석</a></li>
+              <li><a href="#">스텝퍼</a></li>
+              <li><a href="#">펫소파</a></li>
+          </ul>
+          <hr>
+          <div class="layer_sub_title">
+              <a href="#">강아지</a>
+          </div>
+          <ul class="almp_menu_ul">
+              <li><a href="#">하우스/방석</a> </li>
+              <li><a href="#">스텝퍼</a></li>
+              <li><a href="#">펫소파</a></li>
+          </ul>
+          </div>
+          <div class="almp_right_menu">
+           <div class="almp_right_box">
+              <div class="layer_right_txt"><a href="#">매거진</a></div>
+              <div class="layer_right_txt"><a href="#">시리즈</a></div>
+              <div class="layer_right_txt"><a href="#">아울렛</a></div>
+              <div class="layer_right_txt"><a href="#">부품구매</a></div>
+              <ul class="almp_right_title">
+                  <li><a href="#">카탈로그</a></li>
+                  <li><a href="#">전시품 판매</a></li>
+                  <li><a href="#">매장안내</a></li>
+                  <li><a href="#">이벤트</a></li>
+                  <li><a href="#">뉴스</a></li>
+                  <li><a href="#">공지사항</a></li>
+                  <li><a href="#">회사소개</a></li>
+              </ul>
+           </div>
+          </div>
+      </div>
+       <div class="almp_line"></div>
+     </div>
+     <div class="search_box_layer">
+        <div class="search_box_close"><i class="fa-solid fa-xmark"></i></div>
+        <h2 class="search_title">어떤 제품이 궁금하신가요?</h2>
+        <i id="search_box_icon" class="fa-solid fa-magnifying-glass"></i><input class="search_box" type="text">
+        <div class="keyword_box">
+        <div class="keyword_title">추천콘텐츠</div>
+        <ul class="contents_keyword">
+         <li>#로이 뮤트 에디션_with RM</li>
+         <li>#해피투게더_시즌_2_페이백_프로모션</li>
+         <li>#학생방_프로모션_혜택받는_꿀조합</li>
+         <li>#자녀방 꾸미기 노하우 전격공개!</li>
+         <li>#거실을_다이닝룸으로_식탁의해방</li>
+        </ul>
+     </div>
+     <div class="sblp_search_box">
+         <div class="keyword_title">추천검색</div>
+         <ul class="search_keyword">
+             <li>#학생방_책상</li>
+             <li>#쿠시노_아이방조합</li>
+             <li>#업모션_테이블</li>
+             <li>#적립대상_침대프레임</li>
+             <li>#새해맞이_아이선물</li>
+            </ul>
+     </div>
+ </div>
+    <div class="iloom_closet_main"><img src="images/iloom_closet_main.jpg" alt="옷장과 의자가 있는 서브 메인 이미지">
+    <h2 class="closet_main_h2">CLOSET</h2>
+</div>
+<section>
+<div class="tct_noto">
+    옷장
+</div>
+<div class="category_list">
+    <dt>품목</dt>
+    <a class="category_a" href="#">옷장/붙박이장</a>
+</div>
+<ul class="h60">
+    <li><span class="hits">인기순</span></li>
+    <li><span class="newer">신상품순</span></li>
+    <li><span class="maxPriceHigh">가격순</span></li>
+    <li><span class="star">상품평순</span></li>
+</ul>
+    <ul class="proUl">
+        <li>
+            <div class="proUl_inr">
+            <img src="images/iloom_closet01.jpg" alt="미엘갤러리 도어">
+            <p class="inr_txt">미엘갤러리</p>
+            <p>미엘갤러리 도어</p> 
+        </div>
+        </li>
+        <li>
+            <div class="proUl_inr">
+            <img src="images/iloom_closet02.jpg" alt="미엘 도어">
+            <p class="inr_txt">미엘</p>
+            <p>미엘 도어</p>
+        </div>           
+        </li>
+        <li>
+            <div class="proUl_inr">
+            <img src="images/iloom_closet03.jpg" alt="리디 도어">
+            <p class="inr_txt">리디</p>
+            <p>리디 도어</p>
+        </div>
+        </li>
+        <li>
+            <div class="proUl_inr">
+            <img src="images/iloom_closet04.jpg" alt="솔리드 슬라이딩 도어">
+            <p class="inr_txt">솔리드</p>
+            <p>솔리드 슬라이딩 도어</p>
+        </div>
+        </li>
+    </ul>
+    <ul class="proUl">
+        <li>
+            <div class="proUl_inr">
+            <img src="images/iloom_closet05.jpg" alt="솔리드 스톤 슬라이딩 도어">
+            <p class="inr_txt">솔리드</p>
+            <p>솔리드 스톤 슬라이딩 도어</p> 
+        </div>
+        </li>
+        <li>
+            <div class="proUl_inr">
+            <img src="images/iloom_closet06.jpg" alt="스톤W 도어">
+            <p class="inr_txt">스톤W</p>
+            <p>스톤W 도어</p>
+        </div>           
+        </li>
+        <li>
+            <div class="proUl_inr">
+            <img src="images/iloom_closet07.jpg" alt="그립 도어">
+            <p class="inr_txt">그립</p>
+            <p>그립 도어</p>
+        </div>
+        </li>
+        <li>
+            <div class="proUl_inr">
+            <img src="images/iloom_closet08.jpg" alt="프레임 도어">
+            <p class="inr_txt">프레임</p>
+            <p>프레임 도어</p>
+        </div>
+        </li>
+    </ul>
+    <ul class="proUl02">
+        <li>
+            <div class="proUl_inr">
+            <img src="images/iloom_closet09.jpg" alt="솔리드 도어">
+            <p class="inr_txt">솔리드</p>
+            <p>솔리드 도어</p> 
+        </div>
+        </li>
+        <li>
+            <div class="proUl_inr">
+            <img src="images/iloom_closet10.jpg" alt="솔리드 아사 도어">
+            <p class="inr_txt">솔리드</p>
+            <p>솔리드 아사 도어</p>
+        </div>           
+        </li>
+        <li>
+            <div class="proUl_inr">
+            <img src="images/iloom_closet11.jpg" alt="솔리드 스톤 도어">
+            <p class="inr_txt">솔리드</p>
+            <p>솔리드 스톤 도어</p>
+        </div>
+        </li>
+    </ul>
+    <div class="page"><a href="#">1</a></div>
+</section>
+    <footer>
+        <div class="footerinr">
+            <div class="footerinr_box">
+            <div class="footerlogo"><img src="images/footer_logo.png" alt="푸터 로고 png"></div>
+            <ul class="footer_item_title">
+                <li>ABOUT
+                    <ul class="footer_item_sub">
+                        <li>회사소개</li>
+                        <li>매장안내</li>
+                        <li>인재채용</li>
+                    </ul>
+                </li>
+                <li>SUPPORT
+                  <ul class="footer_item_sub">
+                      <li>고객지원</li>
+                      <li>서비스센터</li>
+                      <li>대리점 개설안내</li>
+                  </ul>
+                </li>
+                <li>INFO
+                  <ul class="footer_item_sub">
+                      <li>이용약관</li>
+                      <li>개인정보 처리방침</li>
+                  </ul>
+                </li>
+            </ul>
+            <div class="footer_dl_box">
+            <dl class="footer_item_dl">
+                <dt>빠른 상담문의</dt>
+                <dd><button class="footer_kakao_btn"><a class="footer_txt" href="#">챗봇상담</a></button></dd>
+            </dl>
+            <dl class="footer_item_dl">
+              <dt>서비스 문의 및 신청</dt>
+              <dd><button class="footer_service_btn"><a class="footer_txt" href="#">일룸 서비스 센터 바로가기</a></button></dd>
+          </dl>
+            <dl class="footer_item_dl">
+              <dt>고객센터 전화 문의</dt>
+              <dd>
+                  <span class="footer_dl_inr">1577-5670</span>
+                  <span class="footer_dl_inr">9:30 ~ 17:30(점심시간 12:30 ~ 13:30)</span>
+                  <span class="footer_dl_inr">9:30 ~ 12:30 (쇼핑몰 구매상담 제외)</span>
+              </dd>
+          </dl>
+          </div>
+          </div>
+        </div>
+      </footer>
+    <div class="transparent"></div>
+
+</body>
+</html>
