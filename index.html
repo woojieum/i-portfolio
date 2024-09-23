@@ -37,10 +37,9 @@
             background: white;
             display: flex;
             position: relative;
-            background: white;
             position: sticky;
             top: 0;
-            z-index: 1;
+            z-index: 9;
             margin: 0 auto;
         }
 
@@ -95,6 +94,14 @@
         }
 
         .header_right-menu > li > a{
+            transition: 0.8s;
+        }
+
+        .header_right-menu > li > a:hover{
+            color: #C80A1E;
+        }
+
+        .header_right-menu > li > a{
             color: black;
             text-decoration: none;
             font-size: 0.8em;
@@ -114,15 +121,74 @@
 
         }
 
+        .hover_menu{
+            width: 90px;
+            height: 160px;
+            background-color: white;
+            border: 1px solid gainsboro;
+            text-align: center;
+            cursor: pointer;
+            position: absolute;
+            top: 100%;
+            left: -8%;
+            display: none;
+            z-index: 9999999;
+        }
+
+        .ho01{
+            left: 1%;
+            height: 50px;
+        }
+
+        .ho02{
+            left: 9%;
+        }
+
+        .ho03{
+            left: 18%;
+            height: 100px;
+        }
+
+        .ho04{
+            left: 27%;
+        }
+
+        .ho05{
+            left: 37.5%;
+        }
+
+        .ho06{
+            left: 47.8%;
+        }
+
+        .ho07{
+            left: 57%;
+            height: 70px;
+            
+        }
+        .ho08{
+            left: 82.5%;
+        }
+
+        .hover_menu > li{
+            font-size: 0.8em;
+            margin-top: 10px;
+        }
+
+        .hover_menu.on{
+            display: block;
+        }
+
         .bx-wrapper{
             width: 1650px;
-            margin: 0 auto;       
+            margin: 0 auto; 
+            z-index: -2;
         }
 
         .swiper-wrapper{
             display: flex;
-            overflow: hidden;
         }
+  
 
         .swiper-wrapper > img{
             width: 100%;
@@ -133,7 +199,7 @@
         }
 
         .bx-prev{
-            z-index: -1;
+            z-index: -10;
         }
 
         .bx-wrapper .bx-pager.bx-default-pager a:hover, 
@@ -349,7 +415,6 @@
         position: absolute;
         width: 252px;
         height: 252px;
-        margin-left: 48px;
       }
 
       .iloom_instaphoto > img{
@@ -540,27 +605,20 @@
           margin-top: 70px;
           margin-left: 24%;
           width: 600px;
+
       }
 
       .notice_list > li{
           margin-top: 15px;
           font-weight: 600;
           cursor: pointer;
+          position: relative;
       }
 
       .ntcDt{
-          margin-left: 50%;
+          right: 0;
           color: #aaaaaa;
-      }
-
-      .ntcDt01{
-          margin-left: 309px;
-          color: #aaaaaa;
-      }
-
-      .ntcDt04{
-          margin-left: 248px;
-          color: #aaaaaa;
+          position: absolute;
       }
     
       footer{
@@ -816,7 +874,7 @@
         left: 86%;
         top: 80%;
         z-index: 9999;
-        display: block;
+        display: none;
      }
 
      .aside_top{
@@ -827,7 +885,7 @@
         border: none;
         font-size: 1.8em;
         cursor: pointer;
-        box-shadow: 3px 3px 3px 3px #999; 
+        box-shadow: 0 0 5px 2px gainsboro; 
      }
 
      .as_chatbot{
@@ -971,13 +1029,22 @@
        $(document).ready(function(){
         $('.swiper-wrapper').bxSlider({
           auto: true,
-          speed: 600,
           pause: 6000,
           slideMargin: 50,
-          autoHover: true
+          autoHover: true,
+          slidesToShow: 1,
+          mode:'fade'
        });
       });
-        
+
+      $(document).ready(function(){
+        $('.header_left-menu > li').mouseover(function(){
+            $(this).find('.hover_menu').stop().show();
+        });
+        $('.header_left-menu > li').mouseleave(function(){
+            $(this).find('.hover_menu').stop().hide();
+        });
+      });
 
         $(function(){
          $(".icon_menubar").click(function(){
@@ -989,6 +1056,13 @@
            $(".transparent").hide();
          });
         });
+
+        $(function(){       
+        $(".hover_menu").mouseover(function(){
+	        $(this).addClass('on');
+        });
+     });
+
 
         $( document ).ready( function() {
         $( window ).scroll( function() {
@@ -1024,23 +1098,86 @@
             <button class="aside_top"><i class="fa-solid fa-caret-up"></i></button>
             <div class="as_chatbot"><a class="as_chatbot_btn" href="#">챗봇</a></div>
             <div class="as_review"><a class="as_review_btn" href="#">리뷰</a></div>
-        </aisde>
+        </aside>
     <header>
        <div class="icon_menubar"><i class="fa-solid fa-bars"></i></div>
         <ul class="header_left-menu">
-            <li><a href="#">침실</a></li>
-            <li><a href="포트폴리오_일룸_서브.html">옷장</a></li>
-            <li><a href="#">거실</a></li>
-            <li><a href="#">주방</a></li>
-            <li><a href="#">키즈룸</a></li>
-            <li><a href="#">학생방</a></li>
-            <li><a href="#">서재</a></li>
+            <li><a href="#">침실</a>
+                <ul class="hover_menu">
+                    <li>침대</li>
+                    <li>매트리스</li>
+                    <li>수납/드레스룸</li>
+                    <li>수납장</li>
+                    <li>화장대</li>
+                </ul>
+            </li>
+            <li><a href="포트폴리오_일룸_서브.html">옷장</a>
+                <ul class="hover_menu ho01">
+                    <li>옷장/붙박이장</li>
+                </ul>
+            </li>
+            <li><a href="#">거실</a>
+                <ul class="hover_menu ho02">
+                    <li>테이블</li>
+                    <li>거실장</li>
+                    <li>소파</li>
+                    <li>수납장</li>
+                    <li>액세서리</li>
+                </ul>
+            </li>
+            <li><a href="#">주방</a>
+                <ul class="hover_menu ho03">
+                    <li>식탁</li>
+                    <li>의자</li>
+                    <li>수납장</li>
+                </ul>
+            </li>
+            <li><a href="#">키즈룸</a>
+                <ul class="hover_menu ho04">
+                    <li>침대</li>
+                    <li>책상</li>
+                    <li>수납장</li>
+                    <li>소파/의자</li>
+                    <li>액세서리</li>
+                </ul>
+            </li>
+            <li><a href="#">학생방</a>
+                <ul class="hover_menu ho05">
+                    <li>책상</li>
+                    <li>책장</li>
+                    <li>수납장</li>
+                    <li>의자</li>
+                    <li>침대</li>
+                </ul>
+            </li>
+            <li><a href="#">서재</a>
+                <ul class="hover_menu ho06">
+                    <li>책상</li>
+                    <li>책장</li>
+                    <li>서랍장</li>
+                    <li>의자</li>
+                    <li>수납장</li>
+                </ul>
+            </li>
             <li class="bar"><a href="#">.</a></li>
-            <li><a href="#">펫</a></li>
+            <li><a href="#">펫</a>
+                <ul class="hover_menu ho07">
+                    <li>고양이</li>
+                    <li>강아지</li>
+                </ul>
+            </li>
             <li class="bar"><a href="#">.</a></li>
             <li><a href="#">매거진</a></li>
             <li class="bar"><a href="#">.</a></li>
-            <li><a href="#">아울렛</a></li>
+            <li><a href="#">아울렛</a>
+                <ul class="hover_menu ho08">
+                    <li>침실</li>
+                    <li>거실</li>
+                    <li>주방</li>
+                    <li>키즈룸</li>
+                    <li>학생방</li>
+                </ul>
+            </li>
         </ul>
         <div class="logo"><img src="images/iloom_logo.png" alt="일룸 로고 png"></div>
         <ul class="header_right-menu">
@@ -1054,13 +1191,12 @@
         <div class="icon_search"><i class="fa-solid fa-magnifying-glass"></i></div>
         <div class="icon_shoppingbasket"><i class="fa-solid fa-cart-shopping"></i></div>
     </header>
-    <div class="main-swiper">
+    <main>
         <div class="swiper-wrapper">
           <img src="images/iloom4.jpg" alt="따뜻한 느낌의 가구사진">
           <img src="images/iloom5.jpg" alt="남자아이가 그림종이를 붙이고 있는 사진">
           <img src="images/iloom6.jpg" alt="bts rm이 메모장을 보는 사진">
         </div>
-    </div>
     <div id="all_menu_layer_popup">
         <div class="layer_close">x</div>
       <div class="layer_title"><a href="#">침실</a>
@@ -1390,7 +1526,6 @@
                </ul>
         </div>
     </div>
-    <main>
     <h4>고객님을 위한 제품 추천</h4>
     <section class="recommended_product">
         <div class="product"><img src="images/iloom product1.jpg" alt="로이 5단 다리형 책상 세트 1400폭">
@@ -1543,10 +1678,10 @@
 <section class="notice_section">
     <div class="notice_title"><img src="images/notice_title.png" alt="노티스 타이틀 png"></div>
     <ul class="notice_list">
-        <li>2024년 1월 무이자 할부 안내 <span class="ntcDt01">2023.12.29</span></li>
+        <li>2024년 1월 무이자 할부 안내 <span class="ntcDt">2023.12.29</span></li>
         <li>2023년 12월 무이자 할부 안내 <span class="ntcDt">2023.11.30</span></li>
         <li>2023년 11월 무이자 할부 안내 <span class="ntcDt">2023.11.01</span></li>
-        <li>일룸 개인정보 처리방침 개정 사전 안내 <span class="ntcDt04">2023.10.27</span></li>
+        <li>일룸 개인정보 처리방침 개정 사전 안내 <span class="ntcDt">2023.10.27</span></li>
     </ul>
 </section>
 </main>
@@ -1599,12 +1734,5 @@
 </footer>
 <div class="transparent"></div>
 </div>
-
-<script type="text/javascript">
-     $('.swiper-wrapper').slick({
-            autoplay: true,
-            autoplaySpeed: 2000
-        }); 
-</script>
 </body>
 </html>
